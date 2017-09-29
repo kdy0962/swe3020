@@ -59,6 +59,31 @@
             }
             f2('greeting');
             f2();
+
+            var o1 = new Object();
+            o1.name ='hika';
+            o1.role = 'tutor';
+            console.log(o1);
+            var o2 = {name:'h', role:'student'};
+            console.log(o2);
+
+            var arr1 = new Array();
+            arr1[0] = 3;
+            arr1[1] = 5;
+            console.log(arr1);
+            var arr2 =[10,20];
+            console.log(arr2);
+
+            var f1 = function double(v){return v*2;};
+            console.log(f1(5));
+
+            var f2 = f1;
+            console.log(f2(5));
+
+            var f3 = function(f,v){
+                return f(v);
+            }
+            console.log(f3(f2,5));
         </script>
     </body>
 </html>
