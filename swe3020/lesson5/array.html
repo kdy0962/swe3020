@@ -1,0 +1,87 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            var arr=[];
+            console.log(arr.length);
+            
+            arr[100]=10;
+            console.log(arr.length);
+            
+            arr.abc="abc";
+            console.log(arr.abc);
+
+            arr["100"]=20;
+            console.log(arr[100]);
+
+            //배열관련 메소드
+            var arr2 = [100,50,1,4,5];
+            var compareTo = function(a,b){
+                if(a>b) return 1;
+                else if(a==b) return 0;
+                else return -1;
+            }
+            arr2.sort(compareTo);
+            console.log(arr2);
+            //stack
+            arr2.push(1,2,3,4,5,6);
+            console.log(arr2);
+            arr2.pop();
+            arr2.pop();
+            arr2.pop();
+            arr2.pop();
+            console.log(arr2);
+
+            //queue
+            arr2.shift();
+            console.log(arr2);
+
+            var sum=0;
+            for(var i=0;i<arr2.length;i++){
+                sum+=arr2[i];
+            }
+            console.log(sum);
+
+            sum=0;
+            arr2.forEach(function(v){
+                sum+=v;
+            });
+
+            var f = function(v, index){
+                sum+=v;
+            }
+
+            console.log("arr::forEach",sum);
+
+            var forEach = function(f){
+                for(var i =0;i<arr2.length;i++){
+                    f(arr2[i],i);
+                }
+            };
+
+            sum=0;
+            forEach(f);
+            console.log("forEach Function",sum);
+
+            //스코프 scope - 식별자의 이름을 인식할 수 있는 범위
+            var ga=100,gb=200;
+            var outer = function(oa, ob){
+                var ola=oa*2,olb=ob*2;
+                var inner = function(ia,ib){
+                    var ila=ia*2,ilb=ib*2;
+                    console.log('oa',oa,'ob',ob,
+                                'ola',ola,'olb',olb,
+                                'ia',ia,'ib',ib,
+                                'ila',ila,'ilb',ilb,
+                                'ga',ga,'gb',gb)
+                };
+                inner(ola,olb);
+            };
+            outer(1,2);
+
+            var check
+        </script>
+    </body>
+</html>
