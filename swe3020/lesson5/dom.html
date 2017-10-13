@@ -1,0 +1,56 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="test">data</p>
+        <div>
+            <div>inner</div>
+        </div>
+        <script>
+            //Document Object Model
+            var body = document.body;
+            console.log(body.children[1].children[0].innerHTML);
+            console.log(document.getElementsByTagName("div"));
+            console.log(document.getElementById("test").innerHTML = "안녕하세요.");
+
+            var panel = document.getElementById("test");
+            var log = function(data){
+                panel.innerHTML=data;
+            };
+            var brightness = function(color){
+                panel.style.backgroundColor = "rgb("+color+","+color+","+color+")";
+            };
+            panel.addEventListener("click", function(event){
+                alert("hello");
+            });
+            panel.addEventListener("mouseover", function(event){
+                brightness(200);
+            });
+            panel.addEventListener("mouseout", function(event){
+                brightness(255);
+            });
+
+            //즉시 실행 함수
+            (function(){
+                var brightness = function(){
+                    panel.style.backgroundColor = rgb(200,200,200);
+                };
+                panel.addEventListener("mouseover",function(event){
+                    brightness();
+                });
+            })();
+
+            // var count=0;
+            // //log("hello DOM");
+            // setInterval(function(){
+            //     if(count <255){
+            //         count++;
+            //     }else count = 0;
+                
+            //     log(count++);
+            //     brightness(count);
+            // }, 16.6);
+        </script>
+    </body>
+</html>

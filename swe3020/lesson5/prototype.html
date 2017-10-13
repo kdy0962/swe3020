@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //프로토타입 prototype
+            //클래스
+            //생성자 - 그냥 함수다
+            var Student = function(name, grade){
+                if(this instanceof Student){
+                    this.name = name;
+                    this.grade = grade;
+                }else{
+                    return new Student(name,grade);
+                }
+                
+            };
+            Student.prototype = new Person();
+            Student.prototype.display = function(){
+                console.log(this.name+"::"+this.grade);
+            }
+
+            var student = new Student("hika",1);
+            console.log(student.display());
+
+            var st1 = Student("hika", 1);
+            //console.log(st1.name, st1.grade);
+            //단지 new를 붙여서 사용하면 생성자로 작동하고 그냥 호출하면 함수로 작동할뿐
+            
+            //console.log(student.name,student.grade);
+            //console.log(student instanceof Student);
+
+            class Extended extends Base{}
+            var Base = function(){};
+            var Extended = function(){};
+
+            var a = new Array();
+            var b = Array();
+            var c = new Date();
+            var d = Date();
+            var f = new Object();
+            var h = Object();
+        </script>
+    </body>
+</html>
