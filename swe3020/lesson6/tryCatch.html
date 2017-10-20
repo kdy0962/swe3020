@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>            
+        </ul>
+        <input type="text" id="data" />
+        <div id="msg"></div>
+        <script>
+            var target = document.getElementById("data");
+            var msg = document.getElementById("msg");
+            var solution = 53;
+            var test = function(){
+                var result = "ok";
+                try{
+                    var x = target.value;
+                    if(x=="") throw "빈값";
+                    else if(isNaN(x)) throw "숫자가 아님";
+                    else x= Number(x);
+                    if(x>solution) throw "크다.";
+                    else if(x<solution) throw "작다.";
+                    //else throw "ok.";
+                }catch(e){
+                    result =e;
+                }
+                msg.innerHTML = result;
+            };
+            target.onchange = test;
+
+        </script>
+    </body>
+</html>
