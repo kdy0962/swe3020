@@ -3,7 +3,7 @@
     </head>
     <body>
         <section class="testover">
-            <h2></h2>
+            <h2>test</h2>
             <div></div>
         </section>
         
@@ -17,24 +17,17 @@
                 },
                 count:0
             };
-            $(".testover").mouseover(function(e){
-                var children = $(e.target).children;
+            $(".testover").click(function(e){
+                e.stopImmediatePropagation();
+                var children = $(e.currentTarget).children();
                 $(children[0]).html(model.title.over);
-                $(children[1]).html(modle.count++);
+                $(children[1]).html(model.count++);
             });
-            var mouseout;
-
-            $(".testover").mouseout(mouseout = function(e){
-                var children = $(e.target).children;
-                $(children[0]).html(model.title.out);
-            });
-
-            var mouseout = function(e){
-                var children = $(e.target).children;
-                $(children[0]).html(model.title.out);
+            var init = function(){
+                $($(".testover").children()[0]).html(model.title.out);
             };
-            $(".testover").mouseout(mouseout);
-            mouseout({target:$(".testover")[0]});
+            init();
+            //mouseout({target:$(".testover")[0]});
         </script> 
     </body>
 </html>
