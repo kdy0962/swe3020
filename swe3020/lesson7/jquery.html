@@ -2,25 +2,19 @@
     <head>
     </head>
     <body>
-        <button id="btn">show it</button>
-        <button id="btn2">change it</button>
-        <img id="dog" style="display:none;width:200px;height:200px" src="http://cfile7.uf.tistory.com/image/112DCD3C4FD5C8A6085FA7" alt="">
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
         <script>
-            $("#btn").click(function(){
-                $("#dog")
-                .show(1500)
-                .animate({left:'500px'})
-                .animate({'border-radius':'50%'},2000)
-                .animate({'border-radius':'0'},2000)
-                .animate({left:'80px'})
-                .hide(1000);
-            })
-            $("#btn2").click(function(e){
-                $("#dog").attr("src","https://media.istockphoto.com/photos/samoyed-dog-picture-id181956647?k=6&m=181956647&s=612x612&w=0&h=CTFw3lFthyPGxbcJZA_P9EgxhzsBcFfsqgTCh_tUd8E=")
-            });
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function(){
+                if(request.readyState == 4){
+                    if(request.status==200){
+                        console.log(request.responseText);
+                    }
+                }
+            };
+            request.open("GET", "");
+            request.send();
         </script>
     </body>
 </html>
