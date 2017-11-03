@@ -1,24 +1,40 @@
 <html>
     <head>
+    </head>
+    <body>
+        <section class="testover">
+            <h2></h2>
+            <div></div>
+        </section>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
         <script>
-            $(function(){
-                $($("h2")[0]).click(function(){
-                    console.log("h2 clicked");
-                });
+            var model = {
+                title:{
+                    over:"test overed",
+                    out:"test"
+                },
+                count:0
+            };
+            $(".testover").mouseover(function(e){
+                var children = $(e.target).children;
+                $(children[0]).html(model.title.over);
+                $(children[1]).html(modle.count++);
             });
-            /*
-            window.addEventListener("load",function(){
-                var h2 = document.getElementsByTagName("h2");
-                h2[0].addEventListener("click",function(){
-                    console.log("h2 clicked");
-                });
+            var mouseout;
+
+            $(".testover").mouseout(mouseout = function(e){
+                var children = $(e.target).children;
+                $(children[0]).html(model.title.out);
             });
-            */
-        </script>  
-    </head>
-    <body>
-        <h2>h2test</h2>
+
+            var mouseout = function(e){
+                var children = $(e.target).children;
+                $(children[0]).html(model.title.out);
+            };
+            $(".testover").mouseout(mouseout);
+            mouseout({target:$(".testover")[0]});
+        </script> 
     </body>
 </html>
