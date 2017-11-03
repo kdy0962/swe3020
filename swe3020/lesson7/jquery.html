@@ -2,32 +2,25 @@
     <head>
     </head>
     <body>
-        <section class="testover">
-            <h2>test</h2>
-            <div></div>
-        </section>
+        <button id="btn">show it</button>
+        <button id="btn2">change it</button>
+        <img id="dog" style="display:none;width:200px;height:200px" src="http://cfile7.uf.tistory.com/image/112DCD3C4FD5C8A6085FA7" alt="">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
         <script>
-            var model = {
-                title:{
-                    over:"test overed",
-                    out:"test"
-                },
-                count:0
-            };
-            $(".testover").click(function(e){
-                e.stopImmediatePropagation();
-                var children = $(e.currentTarget).children();
-                $(children[0]).html(model.title.over);
-                $(children[1]).html(model.count++);
+            $("#btn").click(function(){
+                $("#dog")
+                .show(1500)
+                .animate({left:'500px'})
+                .animate({'border-radius':'50%'},2000)
+                .animate({'border-radius':'0'},2000)
+                .animate({left:'80px'})
+                .hide(1000);
+            })
+            $("#btn2").click(function(e){
+                $("#dog").attr("src","https://media.istockphoto.com/photos/samoyed-dog-picture-id181956647?k=6&m=181956647&s=612x612&w=0&h=CTFw3lFthyPGxbcJZA_P9EgxhzsBcFfsqgTCh_tUd8E=")
             });
-            var init = function(){
-                $($(".testover").children()[0]).html(model.title.out);
-            };
-            init();
-            //mouseout({target:$(".testover")[0]});
-        </script> 
+        </script>
     </body>
 </html>
