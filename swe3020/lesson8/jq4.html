@@ -10,9 +10,11 @@
             });
             var el = $('#id');
             $.get("jquery1.html",{a:5,b:3},function(data,status){
-                el.html(data);
+                el.html($(data).select("#myPara").html());
             });
+
             $('#id').load("jquery1.html",{a:5,b:3});
+
             $.post("jquery1.html",{a:5,b:3},function(data,status){
                 console.log(data);
             });

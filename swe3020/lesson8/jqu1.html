@@ -1,0 +1,27 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script>
+            var input = document.createElement("input");
+            input.name = "test";
+            input.type = "text";
+            input.value = "test";
+            document.body.appendChild(input);
+
+            var a = $('<input type="text" name="test2" value="test2" />');
+            document.body.appendChild(a[0]);
+            var obj = {"a":27,"b":"abc"};
+            var json ='{"a":3,"b":5}';
+            try {
+                console.log(JSON.parse(json)).b;    
+            } catch (e) {
+                console.log(e);
+            }
+            console.log(JSON.stringify(json));
+        </script>
+        
+    </body>
+</html>
