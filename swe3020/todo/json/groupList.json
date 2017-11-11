@@ -2,17 +2,17 @@
     "result" : "OK",
     "data":[
         {
-            "id":1,
+            "id":0,
             "name":"오늘 할 일",
             "color":"blue",
             "icon":"sun",
-            "count":0
+            "count":1
         },{
             "id":1,
-            "name":"오늘 할 일",
-            "color":"blue",
-            "icon":"sun",
-            "count":0
+            "name":"내일 할 일",
+            "color":"green",
+            "icon":"moon",
+            "count":2
         }
     ]
 }
