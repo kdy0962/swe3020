@@ -1,0 +1,17 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script>
+            $.get("jquery1.html",function(result,data){
+                var arr = result.data;
+                var list = "";
+                for(var i =0;i<arr.length;i++){
+                    list += '<li>' +'<span style="color:'+arr[i].color+'">&#9776;</span> '+arr[i].name+"</li>";
+                }
+            });
+        </script>
+    </body>
+</html>
